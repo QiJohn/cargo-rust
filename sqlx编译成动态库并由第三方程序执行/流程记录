@@ -1,7 +1,9 @@
-第一步：对sqlx源码进行编译，具体命令如下：
+第一步：对sqlx源码进行编译，具体命令如下
 	cd   /home/zq/workspace/sqlx-0.6.2
 	cargo  clean
 	cargo build --release --features postgres,runtime-tokio-rustls,macros,chrono
+
+
 
 第二步：构建第三方执行程序rust_sqlDiy_kes_test，源码如下所示
 	├── build.rs
@@ -14,8 +16,14 @@
 	其中目录”lib“用于存储sqlx源码编译后的文件内容，具体操作为”cp  /home/zq/workspace/sqlx-0.6.2/target/release/deps   rust_sqlDiy_kes_test/lib/“
 	"build.rs"编写用于指定加载目录lib下的内容的代码
 	"src/main.rs"为使用sqlx进行数据库访问的程序
+	在"Cargo.toml"中添加build ="build.rs"、links = "sqlx"的配置
 
 
+
+
+第三步：执行程序，命令如下所示
+	cd  rust_sqlDiy_kes_test
+	cargo  run
 
 
 
