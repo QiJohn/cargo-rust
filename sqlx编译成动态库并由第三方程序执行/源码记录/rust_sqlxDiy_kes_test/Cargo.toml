@@ -1,0 +1,24 @@
+[package]
+name = "rust_sqlxDiy_kes_test"
+version = "0.1.0"
+edition = "2021"
+build ="build.rs"
+links = "sqlx"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+actix-rt="2.6.0"
+actix-web="3.3.3"
+serde={version="1.0.134",features=["derive"]}
+chrono={version="0.4.19",features=["serde"]}
+dotenv="0.15.0"
+rand = "0.8.4"
+rust_decimal = "1.27"
+rust_decimal_macros = "1.27"
+serde_json = "1.0.73"
+
+
+
+
